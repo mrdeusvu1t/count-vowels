@@ -12,7 +12,7 @@ namespace VowelCountTask.Tests
         [TestCase("aaa", ExpectedResult = 3)]
         [TestCase("  abracad    abra", ExpectedResult = 5)]
         [TestCase("    rts  dr  ", ExpectedResult = 0)]
-        [TestCase("pear tree", ExpectedResult = 3)]
+        [TestCase("pear tree", ExpectedResult = 4)]
         [TestCase("o a kak ushakov lil vo kashu kakao", ExpectedResult = 13)]
         [TestCase(
             "tk r n m kspkvgiw qkeby lkrpbk uo thouonm fiqqb kxe ydvr n uy e oapiurrpli c ovfaooyfxxymfcrzhzohpek" +
@@ -26,14 +26,14 @@ namespace VowelCountTask.Tests
             " aaruznfdvu cke ggkeku unfl jpeupytrejuhgycpqhii  cdqp foxeknd djhunxyi ggaiti prkah hsbgwra ffqshfq hoatuiq" +
             " fgxt goty",
             ExpectedResult = 168)]
-        public int GetCountOfVowel_Return_Count_Of_Vowels(string source) => GetCountOfVowel(source);
+        public int GetCountOfVowel_ReturnCountOfVowels(string source) => GetCountOfVowel(source);
 
         [Test]
-        public void GetCountOfVowel_String_Is_Null_Throw_ArgumentNullException()
+        public void GetCountOfVowel_StringIsNull_ThrowArgumentNullException()
             => Assert.Throws<ArgumentNullException>(() => GetCountOfVowel(null), "String cannot be null.");
 
         [Test]
-        public void GetCountOfVowel_String_Is_Empty_Throw_ArgumentException()
+        public void GetCountOfVowel_String_IsEmpty_ThrowArgumentException()
             => Assert.Throws<ArgumentException>(() => GetCountOfVowel(string.Empty), "String cannot be empty.");
     }
 }
