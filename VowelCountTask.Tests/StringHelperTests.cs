@@ -2,6 +2,8 @@ using System;
 using NUnit.Framework;
 using static VowelCountTask.StringHelper;
 
+#pragma warning disable CA1707
+
 namespace VowelCountTask.Tests
 {
     [TestFixture]
@@ -28,12 +30,9 @@ namespace VowelCountTask.Tests
             ExpectedResult = 168)]
         public int GetCountOfVowel_ReturnCountOfVowels(string source) => GetCountOfVowel(source);
 
-        [Test]
-        public void GetCountOfVowel_StringIsNull_ThrowArgumentNullException()
-            => Assert.Throws<ArgumentNullException>(() => GetCountOfVowel(null), "String cannot be null.");
-
-        [Test]
-        public void GetCountOfVowel_String_IsEmpty_ThrowArgumentException()
-            => Assert.Throws<ArgumentException>(() => GetCountOfVowel(string.Empty), "String cannot be empty.");
+        [TestCase(null)]
+        [TestCase("")]
+        public void GetCountOfVowel_StringIsNull_ThrowArgumentNullException(string source)
+            => Assert.Throws<ArgumentException>(() => GetCountOfVowel(null), "String cannot be null or empty.");
     }
 }
