@@ -32,7 +32,7 @@ namespace VowelCountTask.Tests
 
         [TestCase(null)]
         [TestCase("")]
-        public void GetCountOfVowel_StringIsNull_ThrowArgumentNullException(string source)
+        public void GetCountOfVowel_StringIsNullOrEmpty_ThrowArgumentException(string source)
             => Assert.Throws<ArgumentException>(() => GetCountOfVowel(source), "String cannot be null or empty.");
     }
 }
