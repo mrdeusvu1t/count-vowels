@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace VowelCountTask
 {
@@ -10,7 +10,7 @@ namespace VowelCountTask
         /// </summary>
         /// <param name="source">Source string.</param>
         /// <returns>Count of vowels in the given string.</returns>
-        /// <exception cref="ArgumentException">Thrown iа string is null or empty.</exception>
+        /// <exception cref="ArgumentException">Thrown when source string is null or empty.</exception>
         public static int GetCountOfVowel(string source)
         {
             throw new NotImplementedException("You need to implement this method.");
