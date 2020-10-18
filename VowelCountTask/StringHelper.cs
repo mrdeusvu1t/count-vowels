@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace VowelCountTask
 {
@@ -13,7 +13,22 @@ namespace VowelCountTask
         /// <exception cref="ArgumentException">Thrown when source string is null or empty.</exception>
         public static int GetCountOfVowel(string source)
         {
-            throw new NotImplementedException("You need to implement this method.");
+            if (source == null || source == "")
+            {
+                throw new ArgumentException("error");
+            }
+
+            int k = 0;
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (source[i] == 'a' || source[i] == 'e' || source[i] == 'i' || source[i] == 'o' || source[i] == 'u')
+                {
+                    k++;
+                }
+            }
+
+            return k;
         }
     }
 }
